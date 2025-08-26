@@ -127,8 +127,21 @@ Before installing dependencies, you need to initialize a Node.js project. Here's
 npm init vite@latest
 ```
 
-This command will prompt you to choose a project name and framework (select Vue). It will scaffold the project structure for you.
+This command will prompt you to choose a project name and framework. It will scaffold the project structure for you.
 
+- When prompted, select these options to use the same project structure as this template:
+
+```
+Project name: (enter your preferred name)
+Select a framework: Vue
+Select a variant: Official Vue Starter
+
+Features to include: None (press enter to continue)
+Experimental features: None (press enter to continue)
+Start with a blank project: Yes (press enter to continue)
+```
+
+This will set up a clean Vue 3 project with Vite and minimal boilerplate.
 
 
 3. **Install and configure TailwindCSS**
@@ -208,8 +221,17 @@ npm i flowbite flowbite-vue
 
 > Now you can use Flowbite Vue anywhere in your project and build awesome interfaces:
 
-- update the `<script setup>` element in your vue component
-- use flowbite css & js components in your vue components
+- update the `<script setup>` element in your vue component to call the flowbite-vue component
+> in this case we use the `FwbAlert` flowbite-vue component
+
+```html
+<script setup>
+import { FwbAlert } from 'flowbite-vue'
+</script>
+```
+
+- Now you can use flowbite css & js components in your vue components
+> in this case `<fwb-alert>` flowbite-vue component
 
 ```html
 <template>
@@ -217,10 +239,6 @@ npm i flowbite flowbite-vue
     Success! You can now use Flowbite Vue in your Vue application 🎉
   </fwb-alert>
 </template>
-
-<script setup>
-import { FwbAlert } from 'flowbite-vue'
-</script>
 ```
 
 
