@@ -1,6 +1,6 @@
 # Vite + Vue 3 + Tailwind CSS + Flowbite Starter
 
-This template should help get you started developing with Vue 3, Tailwindcss 4 and Flowbite 3 in Vite to init you Front-end Node Only Project.
+Kickstart your front-end Node-only project with this template powered by Vue 3, Tailwind CSS v4, Flowbite v3, and Vite — everything you need for a fast, modern development experience.
 
 ---
 
@@ -334,7 +334,7 @@ Vue is easier for beginners to pick up, with a more intuitive syntax. React offe
 
 
 
-## Why Flowbite with Tailwind CSS? 🎨
+## Why Flowbite with Tailwind CSS ? 🎨
 
 Using **Tailwind CSS** alone can be disorienting for developers accustomed to Bootstrap's component-based approach. While Tailwind provides powerful utility classes, it lacks built-in interactive components like modals and dropdowns.
 
