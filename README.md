@@ -10,6 +10,8 @@ Kickstart your front-end Node-only project with this template powered by Vue 3, 
 [![Vue](https://img.shields.io/badge/vue-%233eaf7c.svg?style=for-the-badge&logo=vuedotjs&logoColor=white)](https://vuejs.org/)
 [![Vuex](https://img.shields.io/badge/vuex-%232f8b61.svg?style=for-the-badge&logo=vuedotjs&logoColor=white)](https://vuex.vuejs.org/)
 [![Vue-Router](https://img.shields.io/badge/vue%20router-%232f8b61.svg?style=for-the-badge&logo=vuedotjs&logoColor=white)](https://router.vuejs.org/)
+[![Pinia](https://img.shields.io/badge/pinia-%232f8b61.svg?style=for-the-badge&logo=vuedotjs&logoColor=white)](https://pinia.vuejs.org/)
+
 
 [![Tailwind CSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![Flowbite](https://img.shields.io/badge/flowbite-%23039BE5.svg?style=for-the-badge&logo=flowbite&logoColor=white)](https://flowbite.com/)
@@ -25,7 +27,8 @@ A modern, production-ready starter template built with:
 - ⚡ [Vite](https://vitejs.dev/) - Next-generation frontend tooling for lightning-fast development and instant hot module replacement
 - 🖖 [Vue 3](https://vuejs.org/) - The Progressive JavaScript Framework
 - 🧭 [Vue Router](https://router.vuejs.org/) - Vue.js official router to enable seamless navigation between pages and views.
-- 🗃️ [Vuex](https://vuex.vuejs.org/) - Vue.js official state management to make it easy to share data across components.
+- 🗃️ [Vuex](https://vuex.vuejs.org/) - Vue.js official state management to make it easy to share data across components (old version).
+- 🗃️ [Pinia](https://pinia.vuejs.org/) - Vue.js official state management to make it easy to share data across components.
 - 🎨 [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework
 - 🎯 [Flowbite](https://flowbite.com/) - Open-source UI component library
 
@@ -292,7 +295,25 @@ app.use(store)
 ```
 
 
-9. **Check the package.json file in the project directory**
+9. **Install and configure Pinia**
+
+```bash
+npm i pinia
+```
+
+- update the main.js file to import and use the store
+```js
+import { createApp } from 'vue'
+import { createPinia } from 'pinia'
+
+const app = createApp({ /* your root component */ })
+
+// Install the store instance as a plugin
+app.use(store)
+```
+
+
+10. **Check the package.json file in the project directory**
 
 ```json
 {
@@ -311,6 +332,7 @@ app.use(store)
   "dependencies": {
     "flowbite": "^3.1.2",
     "flowbite-vue": "^0.2.1",
+    "pinia": "^3.0.3",
     "vue": "^3.5.18",
     "vue-router": "^4.5.1",
     "vuex": "^4.1.0"
@@ -323,9 +345,10 @@ app.use(store)
     "vite-plugin-vue-devtools": "^8.0.0"
   }
 }
+
 ```
 
-10. **Install dependencies**
+11. **Install dependencies**
 
 ```bash
 cd your-project-name
@@ -335,7 +358,7 @@ npm install
 yarn install
 ```
 
-9. **Start the development server**
+12. **Start the development server**
 
 ```bash
 npm run dev
@@ -343,7 +366,7 @@ npm run dev
 yarn dev
 ```
 
-10. **Build for production**
+13. **Build for production**
 
 ```bash
 npm run build
@@ -401,6 +424,45 @@ Vue is easier for beginners to pick up, with a more intuitive syntax. React offe
 | **📱 Mobile-First Design** | Yes, Tailwind ensures responsive design out of the box | Yes, same Tailwind advantage with cleaner integration via Vite |
 | **🧼 CSS Reset (Preflight)** | Included via Tailwind’s base layer | Same Tailwind Preflight ensures consistent styling across browsers |
 
+
+
+## Why Pinia ? 🗃️
+
+Pinia is the new state management library for Vue.js. It is a more modern and more flexible alternative to Vuex.
+
+## 🧠 Vuex  
+Vuex is the **historical official solution** for state management in Vue.
+
+- Very robust, well-documented, and tightly integrated with the Vue ecosystem.  
+- Uses a model based on **mutations**, **actions**, and **getters**.  
+- Ideal for large applications with complex state management needs.
+
+---
+
+## 🍍 Pinia  
+Pinia is the **official replacement** for Vuex starting with Vue 3.
+
+- Lighter, more intuitive, and based on the **Composition API**.  
+- No need for mutations — state can be modified directly.  
+- Better integration with **TypeScript**.  
+- Supports **hot module replacement** and **modularity** natively.
+
+---
+
+## 🚀 Summary Comparison
+
+| Criteria             | Vuex               | Pinia                  |
+|----------------------|--------------------|------------------------|
+| API Style            | Options API        | Composition API        |
+| Complexity           | More verbose       | Simpler                |
+| TypeScript Support   | Less intuitive     | Well integrated        |
+| Performance          | Solid              | Lightweight            |
+| Vue Recommendation   | Legacy standard    | Official new standard  |
+
+---
+
+👉 If you're starting a project with **Vue 3**, **Pinia is clearly recommended**.  
+However, if your app already uses Vuex and works well, there's no urgent need to migrate.
 
 
 ## Why Flowbite with Tailwind CSS ? 🎨
