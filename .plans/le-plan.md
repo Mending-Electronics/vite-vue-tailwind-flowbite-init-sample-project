@@ -10,7 +10,7 @@
 - Installer les dépendances : TailwindCSS, Flowbite, Flowbite-Vue, Vuex, Vue Router
 
 ### 2. Configuration TailwindCSS
-- Définir les 4 thèmes dans `tailwind.config.js`
+- Définir les 5 thèmes dans `tailwind.config.js`
 - Utiliser `data-theme` pour appliquer dynamiquement les couleurs
 
 ### 3. Configuration Vue Router
@@ -33,7 +33,7 @@
 - **PricingPage.vue** : Tableau des prix
 
 ### 7. Composant ThemeSwitcher
-- Dropdown Flowbite-Vue avec les 4 options de thème
+- Dropdown Flowbite-Vue avec les 5 options de thème
 - Appel à Vuex pour changer le thème
 
 ## 📌 Objectifs secondaires

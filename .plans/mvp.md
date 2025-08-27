@@ -7,7 +7,7 @@
 Build a multi-page Vue 3 front-end app using Vite, TailwindCSS 4, and Flowbite-Vue. The app includes:
 - 5 core routes: Home, Login, Sign-Up, Features, Pricing
 - Flowbite-Vue UI components
-- Theme switching across 4 TailwindCSS themes: Light (default), Dark, Protanopia, Deuteranopia, Tritanomaly
+- Theme switching across 5 TailwindCSS themes: Light (default), Dark, Protanopia, Deuteranopia, Tritanomaly
 
 ## 🧱 Tech Stack
 - **Vue 3**
@@ -62,7 +62,7 @@ src/
 ## ✅ MVP Goals
 - [x] Vue Router setup with 5 routes
 - [x] Flowbite-Vue components in each page
-- [x] TailwindCSS 4 with custom themes
+- [x] TailwindCSS 4 with 5 custom themes
 - [x] Theme switcher dropdown
 - [x] Vuex for theme state
 

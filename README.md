@@ -2,14 +2,21 @@
 
 Kickstart your front-end Node-only project with this template powered by Vue 3, Tailwind CSS v4, Flowbite v3, and Vite — everything you need for a fast, modern development experience.
 
+
+
 ---
 
 [![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
-[![Vue.js](https://img.shields.io/badge/vuejs-%2335495e.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D)](https://vuejs.org/)
+[![Vue](https://img.shields.io/badge/vue-%233eaf7c.svg?style=for-the-badge&logo=vuedotjs&logoColor=white)](https://vuejs.org/)
+[![Vuex](https://img.shields.io/badge/vuex-%232f8b61.svg?style=for-the-badge&logo=vuedotjs&logoColor=white)](https://vuex.vuejs.org/)
+[![Vue-Router](https://img.shields.io/badge/vue%20router-%232f8b61.svg?style=for-the-badge&logo=vuedotjs&logoColor=white)](https://router.vuejs.org/)
+
 [![Tailwind CSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![Flowbite](https://img.shields.io/badge/flowbite-%23039BE5.svg?style=for-the-badge&logo=flowbite&logoColor=white)](https://flowbite.com/)
+
 [![Node](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
 [![npm](https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white)](https://www.npmjs.com/)
+
 
 ## 🚀 Project Overview
 
@@ -17,6 +24,8 @@ A modern, production-ready starter template built with:
 
 - ⚡ [Vite](https://vitejs.dev/) - Next Generation Frontend Tooling
 - 🖖 [Vue 3](https://vuejs.org/) - The Progressive JavaScript Framework
+- 🎯 [Vue Router](https://router.vuejs.org/) - Vue.js official router
+- 🎯 [Vuex](https://vuex.vuejs.org/) - Vue.js official state management
 - 🎨 [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework
 - 🎯 [Flowbite](https://flowbite.com/) - Open-source UI component library
 
@@ -25,9 +34,12 @@ A modern, production-ready starter template built with:
 - ⚡ Blazing fast development with Vite
 - 🛠️ Vue 3's Composition API
 - 🎨 Pre-configured Tailwind CSS with Flowbite
+- 🖼️ 5 Themes: Light, Dark and for color-blindness (Tritanomaly Deuteranopia Protanopia)
 - 🔥 Hot Module Replacement (HMR)
 - 📦 Optimized production build
 - 🛠️ Vue DevTools integration
+
+
 
 ## 🛠️ Prerequisites
 
@@ -100,11 +112,6 @@ yarn build
 - [Vue.js](https://vuejs.org/) for the progressive framework
 - [Tailwind CSS](https://tailwindcss.com/) for the utility-first CSS framework
 - [Flowbite](https://flowbite.com/) for the beautiful UI components
-    vue(),
-    tailwindcss(),
-  ],
-})
-
 ---
 
 # 🛠️ Project Creation 
