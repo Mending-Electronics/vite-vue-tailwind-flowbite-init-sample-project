@@ -242,8 +242,52 @@ import { FwbAlert } from 'flowbite-vue'
 ```
 
 
+7. **Install and configure Vue Router**
 
-7. **Check the package.json file in the project directory**
+```bash
+npm install vue-router@4
+```
+
+- update the main.js file to import and use the router
+```js
+import { createRouter } from 'vue-router'.
+```
+
+8. **Install and configure Vuex**
+
+
+```bash
+npm i vuex
+```
+
+- update the main.js file to import and use the store
+
+```js
+import { createApp } from 'vue'
+import { createStore } from 'vuex'
+
+// Create a new store instance.
+const store = createStore({
+  state () {
+    return {
+      count: 0
+    }
+  },
+  mutations: {
+    increment (state) {
+      state.count++
+    }
+  }
+})
+
+const app = createApp({ /* your root component */ })
+
+// Install the store instance as a plugin
+app.use(store)
+```
+
+
+9. **Check the package.json file in the project directory**
 
 ```json
 {
@@ -262,7 +306,9 @@ import { FwbAlert } from 'flowbite-vue'
   "dependencies": {
     "flowbite": "^3.1.2",
     "flowbite-vue": "^0.2.1",
-    "vue": "^3.5.18"
+    "vue": "^3.5.18",
+    "vue-router": "^4.5.1",
+    "vuex": "^4.1.0"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.1.12",
@@ -274,7 +320,7 @@ import { FwbAlert } from 'flowbite-vue'
 }
 ```
 
-8. **Install dependencies**
+10. **Install dependencies**
 
 ```bash
 cd your-project-name
