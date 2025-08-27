@@ -22,17 +22,15 @@ Kickstart your front-end Node-only project with this template powered by Vue 3, 
 
 A modern, production-ready starter template built with:
 
-- ⚡ [Vite](https://vitejs.dev/) - Next Generation Frontend Tooling
+- ⚡ [Vite](https://vitejs.dev/) - Next-generation frontend tooling for lightning-fast development and instant hot module replacement
 - 🖖 [Vue 3](https://vuejs.org/) - The Progressive JavaScript Framework
-- 🎯 [Vue Router](https://router.vuejs.org/) - Vue.js official router
-- 🎯 [Vuex](https://vuex.vuejs.org/) - Vue.js official state management
+- 🧭 [Vue Router](https://router.vuejs.org/) - Vue.js official router to enable seamless navigation between pages and views.
+- 🗃️ [Vuex](https://vuex.vuejs.org/) - Vue.js official state management to make it easy to share data across components.
 - 🎨 [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework
 - 🎯 [Flowbite](https://flowbite.com/) - Open-source UI component library
 
 ## ✨ Features
 
-- ⚡ Blazing fast development with Vite
-- 🛠️ Vue 3's Composition API
 - 🎨 Pre-configured Tailwind CSS with Flowbite
 - 🖼️ 5 Themes: Light, Dark and for color-blindness (Tritanomaly Deuteranopia Protanopia)
 - 🔥 Hot Module Replacement (HMR)
