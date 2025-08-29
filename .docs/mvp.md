@@ -12,7 +12,7 @@ Build a multi-page Vue 3 front-end app using Vite, TailwindCSS 4, and Flowbite-V
 ## 🧱 Tech Stack
 - **Vue 3**
 - **Vue Router**
-- **Vuex**
+- **Pinia**
 - **Vite**
 - **TailwindCSS 4**
 - **Flowbite & Flowbite-Vue**
@@ -20,11 +20,11 @@ Build a multi-page Vue 3 front-end app using Vite, TailwindCSS 4, and Flowbite-V
 ## 🗺️ Routes
 | Route       | Path        | Component        |
 |-------------|-------------|------------------|
-| Home        | `/`         | `HomePage.vue`   |
-| Login       | `/login`    | `LoginPage.vue`  |
-| Sign-Up     | `/signup`   | `SignupPage.vue` |
-| Features    | `/features` | `FeaturesPage.vue` |
-| Pricing     | `/pricing`  | `PricingPage.vue` |
+| Home        | `/`         | `HomeView.vue`   |
+| Login       | `/login`    | `LoginView.vue`  |
+| Sign-Up     | `/signup`   | `SignupView.vue` |
+| Features    | `/features` | `FeaturesView.vue` |
+| Pricing     | `/pricing`  | `PricingView.vue` |
 
 ## 🎨 Themes
 - **Light (default)**: Custom palette provided
@@ -36,7 +36,7 @@ Build a multi-page Vue 3 front-end app using Vite, TailwindCSS 4, and Flowbite-V
 Themes are defined in `tailwind.config.js` using `theme.extend.colors`.
 
 ## 🔄 Theme Switcher
-Each page includes a Flowbite-Vue `Dropdown` component to toggle between themes. Selected theme is stored in Vuex and applied via Tailwind's `data-theme` attribute on `<html>`.
+Each page includes a Flowbite-Vue `Dropdown` component to toggle between themes. Selected theme is stored in Pinia and applied via Tailwind's `data-theme` attribute on `<html>`.
 
 ## 📦 Folder Structure
 
@@ -45,24 +45,24 @@ src/
 ├── assets/
 ├── components/
 │   └── ThemeSwitcher.vue
-├── pages/
-│   ├── HomePage.vue
-│   ├── LoginPage.vue
-│   ├── SignupPage.vue
-│   ├── FeaturesPage.vue
-│   └── PricingPage.vue
+├── views/
+│   ├── HomeView.vue
+│   ├── LoginView.vue
+│   ├── SignupView.vue
+│   ├── FeaturesView.vue
+│   └── PricingView.vue
 ├── router/
-│   └── index.js
+│   └── router.js
 ├── store/
-│   └── index.js
+│   └── store.js
 ├── App.vue
 └── main.js
 ```
 
 ## ✅ MVP Goals
-- [x] Vue Router setup with 5 routes
-- [x] Flowbite-Vue components in each page
-- [x] TailwindCSS 4 with 5 custom themes
-- [x] Theme switcher dropdown
-- [x] Vuex for theme state
+- [ ] Vue Router setup with 5 routes
+- [ ] Flowbite-Vue components in each page
+- [ ] TailwindCSS 4 with 5 custom themes
+- [ ] Theme switcher dropdown
+- [ ] Pinia for theme state
 
