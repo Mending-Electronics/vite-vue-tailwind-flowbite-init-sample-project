@@ -11,7 +11,7 @@ import { FwbAlert } from 'flowbite-vue'
 
 
 <style scoped>
-@reference "./style.css";
+@reference "./main.css";
 
 .custom-class {
   @apply border rounded p-3;
