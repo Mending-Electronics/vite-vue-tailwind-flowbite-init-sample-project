@@ -1,10 +1,62 @@
 @import "tailwindcss";
 
-/* import Flowbite Vue styles */
-@import "flowbite-vue/index.css";
 
-/* import Flowbite plugin */
-@plugin "flowbite/plugin";
+@import "flowbite/dist/flowbite.css";
 
-/* add Flowbite Vue directory using @source directive */
-@source "../node_modules/flowbite-vue";
+@layer base {
+  :root {
+    --primary: #0D6986;
+    --primary-light: #0d5a77;
+    --primary-dark: #0c4c68;
+    --secondary: #546e7a;
+    --accent: #0b203c;
+  }
+
+  .dark {
+    --primary: #0D6986;
+    --primary-light: #0d5a77;
+    --primary-dark: #0c4c68;
+  }
+}
+
+/* Base styles */
+body {
+  background-color: #ffffff;
+  color: #111827;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.dark body {
+  background-color: #111827;
+  color: #f9fafb;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f3f4f6;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background-color: #1f2937;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #d1d5db;
+  border-radius: 9999px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background-color: #4b5563;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #9ca3af;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background-color: #6b7280;
+}
