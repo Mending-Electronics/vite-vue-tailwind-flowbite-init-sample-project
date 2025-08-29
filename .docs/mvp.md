@@ -56,7 +56,7 @@ src/
 ├── store/
 │   └── store.js
 ├── App.vue
-└── main.js
+└── main.ts
 ```
 
 ## ✅ MVP Goals

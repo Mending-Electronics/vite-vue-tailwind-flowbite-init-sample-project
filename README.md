@@ -8,10 +8,9 @@ Kickstart your front-end Node-only project with this template powered by Vue 3, 
 
 [![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
 [![Vue](https://img.shields.io/badge/vue-%233eaf7c.svg?style=for-the-badge&logo=vuedotjs&logoColor=white)](https://vuejs.org/)
-[![Vuex](https://img.shields.io/badge/vuex-%232f8b61.svg?style=for-the-badge&logo=vuedotjs&logoColor=white)](https://vuex.vuejs.org/)
 [![Vue-Router](https://img.shields.io/badge/vue%20router-%232f8b61.svg?style=for-the-badge&logo=vuedotjs&logoColor=white)](https://router.vuejs.org/)
 [![Pinia](https://img.shields.io/badge/pinia-%232f8b61.svg?style=for-the-badge&logo=vuedotjs&logoColor=white)](https://pinia.vuejs.org/)
-
+[![Vue DevTools](https://img.shields.io/badge/vue%20devtools-%232f8b61.svg?style=for-the-badge&logo=vuedotjs&logoColor=white)](https://pinia.vuejs.org/)
 
 [![Tailwind CSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![Flowbite](https://img.shields.io/badge/flowbite-%23039BE5.svg?style=for-the-badge&logo=flowbite&logoColor=white)](https://flowbite.com/)
@@ -27,10 +26,26 @@ A modern, production-ready starter template built with:
 - ⚡ [Vite](https://vitejs.dev/) - Next-generation frontend tooling for lightning-fast development and instant hot module replacement
 - 🖖 [Vue 3](https://vuejs.org/) - The Progressive JavaScript Framework
 - 🧭 [Vue Router](https://router.vuejs.org/) - Vue.js official router to enable seamless navigation between pages and views.
-- 🗃️ [Vuex](https://vuex.vuejs.org/) - Vue.js official state management to make it easy to share data across components (old version).
 - 🗃️ [Pinia](https://pinia.vuejs.org/) - Vue.js official state management to make it easy to share data across components.
 - 🎨 [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework
 - 🎯 [Flowbite](https://flowbite.com/) - Open-source UI component library
+
+## 📦 Dependencies
+
+### Core Dependencies
+
+- `vue`: ^3.5.18 - The Progressive JavaScript Framework
+- `flowbite`: ^3.1.2 - Open-source UI component library
+- `flowbite-vue`: ^0.2.1 - Flowbite components for Vue 3
+
+### Development Dependencies
+
+- `@vitejs/plugin-vue`: ^6.0.1 - Vue 3 support for Vite
+- `vite`: ^7.0.6 - Next Generation Frontend Tooling
+- `tailwindcss`: ^4.1.12 - A utility-first CSS framework
+- `@tailwindcss/vite`: ^4.1.12 - Tailwind CSS Vite plugin
+- `vite-plugin-vue-devtools`: ^8.0.0 - Vue DevTools integration for Vite
+
 
 ## ✨ Features
 
@@ -78,46 +93,32 @@ yarn build
 ## 📁 Project Structure
 
 ```
-├── public/           # Static files
-├── src/
-│   ├── assets/       # Assets (images, fonts, etc.)
-│   ├── components/   # Vue components
-│   ├── App.vue       # Root component
-│   └── main.js       # Application entry point
-├── index.html        # Main HTML file
-├── package.json      # Project dependencies
-└──  vite.config.js    # Vite configuration
-
+├── public/                   # Static files
+├── src/                      # Source files
+│   ├── assets/               # Assets (images, fonts, etc.)
+│   ├── components/           # Vue components (reusable UI components)
+│   ├── views/                # Vue views (pages templates)
+│   │   ├── HomeView.vue      # Home page
+│   │   ├── LoginView.vue     # Login page
+│   │   ├── SignupView.vue    # Sign-up page
+│   │   ├── FeaturesView.vue  # Features page
+│   │   └── PricingView.vue   # Pricing page
+│   ├── router/               # Vue router (routes configuration with Vue Router)
+│   │   └── router.js
+│   ├── store/                # Vue store (state management with Pinia)
+│   │   └── store.js
+│   ├── App.vue               # Root component (contains the router-view and the theme switcher)
+│   └── main.ts               # Application entry point (contains the main app instance and the router)
+├── index.html                # Main HTML file
+├── package.json              # Project dependencies
+└──  vite.config.js           # Vite configuration 
 ```
 
-## 📦 Dependencies
 
-### Core Dependencies
-
-- `vue`: ^3.5.18 - The Progressive JavaScript Framework
-- `flowbite`: ^3.1.2 - Open-source UI component library
-- `flowbite-vue`: ^0.2.1 - Flowbite components for Vue 3
-
-### Development Dependencies
-
-- `@vitejs/plugin-vue`: ^6.0.1 - Vue 3 support for Vite
-- `vite`: ^7.0.6 - Next Generation Frontend Tooling
-- `tailwindcss`: ^4.1.12 - A utility-first CSS framework
-- `@tailwindcss/vite`: ^4.1.12 - Tailwind CSS Vite plugin
-- `vite-plugin-vue-devtools`: ^8.0.0 - Vue DevTools integration for Vite
-
-
-## 🙏 Acknowledgments
-
-- [Vite](https://vitejs.dev/) for the amazing build tool
-- [Vue.js](https://vuejs.org/) for the progressive framework
-- [Tailwind CSS](https://tailwindcss.com/) for the utility-first CSS framework
-- [Flowbite](https://flowbite.com/) for the beautiful UI components
----
 
 # 🛠️ Project Creation 
 
-This template should help get you started developing with Vue 3, Tailwindcss 4 and Flowbite 3 in Vite.
+This template should help get you started developing with Vite, Vue 3, Tailwindcss 4 and Flowbite 3 in Vite.
 
 ✅ What You Should Do First
 
@@ -261,41 +262,7 @@ npm install vue-router@4
 import { createRouter } from 'vue-router'.
 ```
 
-8. **Install and configure Vuex**
-
-
-```bash
-npm i vuex
-```
-
-- update the main.js file to import and use the store
-
-```js
-import { createApp } from 'vue'
-import { createStore } from 'vuex'
-
-// Create a new store instance.
-const store = createStore({
-  state () {
-    return {
-      count: 0
-    }
-  },
-  mutations: {
-    increment (state) {
-      state.count++
-    }
-  }
-})
-
-const app = createApp({ /* your root component */ })
-
-// Install the store instance as a plugin
-app.use(store)
-```
-
-
-9. **Install and configure Pinia**
+8. **Install and configure Pinia**
 
 ```bash
 npm i pinia
@@ -313,7 +280,7 @@ app.use(store)
 ```
 
 
-10. **Check the package.json file in the project directory**
+9. **Check the package.json file in the project directory**
 
 ```json
 {
@@ -348,7 +315,7 @@ app.use(store)
 
 ```
 
-11. **Install dependencies**
+10. **Install dependencies**
 
 ```bash
 cd your-project-name
@@ -358,7 +325,7 @@ npm install
 yarn install
 ```
 
-12. **Start the development server**
+11. **Start the development server**
 
 ```bash
 npm run dev
@@ -366,7 +333,7 @@ npm run dev
 yarn dev
 ```
 
-13. **Build for production**
+12. **Build for production**
 
 ```bash
 npm run build
