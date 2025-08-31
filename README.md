@@ -45,6 +45,12 @@ A modern, production-ready starter template built with:
 - `tailwindcss`: ^4.1.12 - A utility-first CSS framework
 - `@tailwindcss/vite`: ^4.1.12 - Tailwind CSS Vite plugin
 - `vite-plugin-vue-devtools`: ^8.0.0 - Vue DevTools integration for Vite
+- `autoprefixer`: ^10.4.17 - Adds vendor prefixes to CSS rules using values from Can I Use  [-webkit-: for WebKit-basedbrowsers (e.g., Chrome, Safari), -moz-: for Mozilla Firefox, -ms-: for Microsoft browsers (e.g., Internet Explorer, Edge), -o-: for Opera (older versions).]
+- `postcss`: ^8.4.35 - Tool for transforming CSS with JavaScript
+- `@headlessui/vue`: ^2.1.1 - Completely unstyled, fully accessible UI components for Vue
+- `@heroicons/vue`: ^2.1.1 - Beautiful hand-crafted SVG icons
+- `@vuelidate/core`: ^2.0.1 - Simple, lightweight model-based validation
+- `@vuelidate/validators`: ^2.0.4 - Common validators for Vuelidate
 
 
 ## ✨ Features
@@ -167,12 +173,37 @@ update vite.config.js
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import tailwindcss from '@tailwindcss/vite'
+import autoprefixer from 'autoprefixer'
 
+// Using ECMAScript Modules (ESM) syntax
+// ESM is the modern standard for JavaScript modules and is natively supported in modern browsers and Node.js
+// Benefits of ESM over CommonJS (require/module.exports):
+// 1. Static analysis - imports are hoisted and can be analyzed before execution
+// 2. Tree-shaking - unused exports can be removed in production builds
+// 3. Better compatibility with modern tools and bundlers
+// 4. Native browser support without bundlers in modern environments
+// 5. Async/await support at the top level
 export default defineConfig({
   plugins: [
     vue(),
     tailwindcss(),
   ],
+  css: {
+    postcss: {
+      plugins: [
+        // Autoprefixer adds vendor prefixes to CSS rules using values from Can I Use
+        // This ensures better cross-browser compatibility
+        autoprefixer({
+          // Configure which browsers to target (optional)
+          overrideBrowserslist: [
+            '>1%',
+            'last 2 versions',
+            'not ie < 11',
+          ]
+        })
+      ]
+    }
+  }
 })
 ```
 
@@ -320,10 +351,17 @@ app.use(store)
 ```bash
 cd your-project-name
 
-npm install
+# Recommended for this project due to potential peer dependency conflicts
+npm install --legacy-peer-deps
 # or
 yarn install
 ```
+
+> **Note on `--legacy-peer-deps` flag**:
+> - `npm install` (default): Strictly enforces peer dependency versions, which can cause installation failures if there are version conflicts between dependencies.
+> - `npm install --legacy-peer-deps`: Ignores peer dependency conflicts and proceeds with installation. This is often needed in projects with complex dependency trees or when using certain UI libraries with specific version requirements.
+> - Use `--legacy-peer-deps` when you encounter peer dependency errors during installation, which is common in modern JavaScript projects with many dependencies.
+> - For production, consider resolving peer dependency conflicts properly by updating package versions when possible.
 
 11. **Start the development server**
 
