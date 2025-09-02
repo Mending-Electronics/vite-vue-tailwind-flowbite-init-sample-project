@@ -517,6 +517,141 @@ This flexibility makes Flowbite a powerful choice for building modern, responsiv
 
 
 
+---
+
+
+# 🧪 Front-End Testing Guide for Vite + Vue 3 Stack
+
+This guide outlines how to integrate **unit testing**, **E2E testing**, **coverage tracking**, and **store mocking** into a modern front-end stack using:
+
+- Vite
+- Vue 3
+- TailwindCSS 4
+- Flowbite 3
+- Pinia
+- Vue Router
+
+---
+
+## 📦 Recommended Packages
+
+Install the following dev dependencies:
+
+```bash
+npm install -D vitest vue-test-utils @testing-library/vue jsdom c8 @pinia/testing
+npm install -D cypress # or playwright
+```
+
+Optional utilities for mocking and testing:
+
+```bash
+npm install -D msw @testing-library/jest-dom
+```
+
+---
+
+## 🗂️ Suggested Project Structure
+
+```
+src/
+├── components/
+│   └── MyComponent.vue
+├── stores/
+│   └── useUserStore.ts
+├── views/
+│   └── HomeView.vue
+├── router/
+│   └── index.ts
+├── tests/
+│   ├── unit/
+│   │   └── MyComponent.spec.ts
+│   ├── e2e/
+│   │   └── home.cy.ts
+│   └── setup/
+│       └── test-utils.ts
+```
+
+---
+
+## ✅ Unit Testing with Vitest
+
+Use `Vitest` with `Vue Test Utils` or `@testing-library/vue`:
+
+```ts
+// tests/unit/MyComponent.spec.ts
+import { render } from '@testing-library/vue'
+import MyComponent from '@/components/MyComponent.vue'
+
+test('renders properly', () => {
+  const { getByText } = render(MyComponent)
+  expect(getByText('Hello World')).toBeTruthy()
+})
+```
+
+---
+
+## 🧠 Mocking Pinia Stores
+
+Use `@pinia/testing` to mock stores:
+
+```ts
+import { createTestingPinia } from '@pinia/testing'
+
+test('uses mocked store', () => {
+  const pinia = createTestingPinia({ stubActions: false })
+  const store = useUserStore(pinia)
+  store.login = vi.fn()
+  // render component with mocked store
+})
+```
+
+---
+
+## 🧪 E2E Testing with Cypress
+
+Set up Cypress for behavior-driven tests:
+
+```ts
+// tests/e2e/home.cy.ts
+describe('Home Page', () => {
+  it('loads and shows welcome message', () => {
+    cy.visit('/')
+    cy.contains('Welcome').should('be.visible')
+  })
+})
+```
+
+---
+
+## 📊 Coverage with c8
+
+Add this to your `package.json` scripts:
+
+```json
+"scripts": {
+  "test": "vitest run",
+  "coverage": "c8 vitest run"
+}
+```
+
+Then run:
+
+```bash
+npm run coverage
+```
+
+---
+
+## 📏 Standards & Best Practices
+
+- **Test Naming**: Use `.spec.ts` for unit tests, `.cy.ts` for Cypress tests
+- **Isolation**: Mock stores and composables to isolate logic
+- **CI Integration**: Add test + coverage steps to your CI pipeline
+- **Accessibility**: Use `@testing-library/vue` to test ARIA roles and keyboard navigation
+- **Snapshot Testing**: Use sparingly for stable components
+
+---
+
 
 ## Recommended IDE Setup
 
