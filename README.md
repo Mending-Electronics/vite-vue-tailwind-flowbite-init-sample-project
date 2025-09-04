@@ -14,11 +14,12 @@ Kickstart your front-end Node-only project with this template powered by Vue 3, 
 [![vue-i18n](https://img.shields.io/badge/vue--i18n-%232f8b61.svg?style=for-the-badge&logo=vuedotjs&logoColor=white)](https://vue-i18n.intlify.dev/)
 [![vue-meta](https://img.shields.io/badge/vue--meta-%232f8b61.svg?style=for-the-badge&logo=vuedotjs&logoColor=white)](https://github.com/nuxt/vue-meta)
 [![Vue Query](https://img.shields.io/badge/vue--query-%232f8b61.svg?style=for-the-badge&logo=vuedotjs&logoColor=white)](https://tanstack.com/query/latest/docs/framework/vue/overview)
-[![Zod + Vuelidate](https://img.shields.io/badge/zod%20%2B%20vuelidate-%232f8b61.svg?style=for-the-badge&logo=vuedotjs&logoColor=white)](https://vuelidate-next.netlify.app/)
-[![Vitest Utils](https://img.shields.io/badge/vue--vitest--utils-%232f8b61.svg?style=for-the-badge&logo=vitest&logoColor=white)](https://vitest.dev/)
-[![Accessibility](https://img.shields.io/badge/axe--core%20%2B%20jest--axe-%232f8b61.svg?style=for-the-badge&logo=testinglibrary&logoColor=white)](https://github.com/dequelabs/axe-core)
+[![Vuelidate + Zod](https://img.shields.io/badge/vuelidate%20%2B%20zod-%232f8b61.svg?style=for-the-badge&logo=vuedotjs&logoColor=white)](https://vuelidate-next.netlify.app/)
 [![Auto Components](https://img.shields.io/badge/unplugin--vue--components-%232f8b61.svg?style=for-the-badge&logo=vuedotjs&logoColor=white)](https://github.com/antfu/unplugin-vue-components)
+[![Accessibility](https://img.shields.io/badge/axe--core%20%2B%20jest--axe-%232f8b61.svg?style=for-the-badge&logo=testinglibrary&logoColor=white)](https://github.com/dequelabs/axe-core)
+[![Vitest Utils](https://img.shields.io/badge/vue--vitest--utils-%232f8b61.svg?style=for-the-badge&logo=vitest&logoColor=white)](https://vitest.dev/)
 [![Vue DevTools](https://img.shields.io/badge/vue%20devtools-%232f8b61.svg?style=for-the-badge&logo=vuedotjs&logoColor=white)](https://pinia.vuejs.org/)
+
 
 [![Tailwind CSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![Flowbite](https://img.shields.io/badge/flowbite-%23039BE5.svg?style=for-the-badge&logo=flowbite&logoColor=white)](https://flowbite.com/)
@@ -38,27 +39,69 @@ A modern, production-ready starter template built with:
 - 🎨 [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework
 - 🎯 [Flowbite](https://flowbite.com/) - Open-source UI component library
 
-## 📦 Dependencies
+---
 
-### Core Dependencies
+# 📦 Vue 3 + Vite Stack – Dependencies & Advantages
 
-- `vue`: ^3.5.18 - The Progressive JavaScript Framework
-- `flowbite`: ^3.1.2 - Open-source UI component library
-- `flowbite-vue`: ^0.2.1 - Flowbite components for Vue 3
+This project uses a modern stack based on Vue 3, Vite, and a curated selection of packages optimized for performance, accessibility, testing, and developer experience.
 
-### Development Dependencies
+---
 
-- `@vitejs/plugin-vue`: ^6.0.1 - Vue 3 support for Vite
-- `vite`: ^7.0.6 - Next Generation Frontend Tooling
-- `tailwindcss`: ^4.1.12 - A utility-first CSS framework
-- `@tailwindcss/vite`: ^4.1.12 - Tailwind CSS Vite plugin
-- `vite-plugin-vue-devtools`: ^8.0.0 - Vue DevTools integration for Vite
-- `autoprefixer`: ^10.4.17 - Adds vendor prefixes to CSS rules using values from Can I Use  [-webkit-: for WebKit-basedbrowsers (e.g., Chrome, Safari), -moz-: for Mozilla Firefox, -ms-: for Microsoft browsers (e.g., Internet Explorer, Edge), -o-: for Opera (older versions).]
-- `postcss`: ^8.4.35 - Tool for transforming CSS with JavaScript
-- `@headlessui/vue`: ^2.1.1 - Completely unstyled, fully accessible UI components for Vue
-- `@heroicons/vue`: ^2.1.1 - Beautiful hand-crafted SVG icons
-- `@vuelidate/core`: ^2.0.1 - Simple, lightweight model-based validation
-- `@vuelidate/validators`: ^2.0.4 - Common validators for Vuelidate
+## 🧩 Main Dependencies (Production)
+
+| Package | Role | Advantage |
+|--------|------|----------|
+| `vue` | Reactive JS framework | Lightweight, fast, easy to learn |
+| `vue-router` | SPA routing | Native Vue integration, transition support |
+| `pinia` | Global store | Replaces Vuex, simpler, typed, modular |
+| `@tanstack/vue-query` | API request management | Caching, synchronization, pagination, automatic retries, **infinite scroll** |
+| `@vuelidate/core` + `@vuelidate/validators` | Form validation | Reactive, declarative, well integrated with Vue |
+| `@vueuse/core` | Vue utility hooks | Reusable, well documented, boosts productivity |
+| `vue-i18n` | Internationalization | Full language support, lazy loading |
+| `vue-meta` | `<meta>` tag management | Useful for SEO, SSR, PWA |
+| `zod` | JS/TS schema validation | Typed, composable, more modern than Joi or Yup |
+| `@headlessui/vue` | Accessible UI components | Unstyled components, perfect for Tailwind |
+| `@heroicons/vue` | SVG icons for Vue | Modern icons, direct Vue integration |
+| `flowbite` + `flowbite-vue` | Tailwind UI components | Ready-to-use, responsive, well styled |
+| `axe-core` + `jest-axe` | Accessibility (a11y) | Automated audits, test integration |
+
+---
+
+## 🧪 Development Dependencies
+
+| Package | Role | Advantage |
+|--------|------|----------|
+| `vite` | Ultra-fast bundler | Instant dev server, HMR, simple config |
+| `@vitejs/plugin-vue` | Vue support in Vite | Official, optimized for Vue 3 |
+| `vite-plugin-vue-devtools` | Vue devtools in Vite | Advanced debugging, component inspection |
+| `tailwindcss` + `@tailwindcss/vite` + `@tailwindcss/postcss` | Utility-first CSS | Fast design, responsive, customizable |
+| `postcss` + `autoprefixer` | CSS preprocessing | Browser compatibility, plugin support |
+| `unplugin-vue-components` | Auto-import Vue components | Less boilerplate, time-saving |
+| `vitest` | Unit testing | Ultra-fast, Vite-integrated, Jest-like syntax |
+| `@testing-library/vue` + `@testing-library/jest-dom` | UI testing | User-centric, readable tests |
+| `@vue/test-utils` | Vue component testing | Low-level, precise testing |
+| `@pinia/testing` | Pinia store testing | Easy mocking, state isolation |
+| `c8` | Code coverage | Fast, compatible with Vitest |
+| `cypress` | End-to-end testing | Interactive UI, highly reliable for E2E |
+| `jsdom` | Virtual DOM for testing | Simulates browser in Node |
+| `msw` | API request mocking | Simulates network requests, perfect for offline/dev testing |
+
+---
+
+## 🧠 Key Comparisons
+
+| Need | Your Choice | Alternative | Why Your Choice Is Better |
+|--------|-----------|-------------|-----------------------------|
+| Store | `pinia` | `vuex` | Simpler, more modern, better TS support |
+| Validation | `vuelidate` + `zod` | `vee-validate`, `yup` | Vuelidate is reactive, Zod is typed |
+| API Requests | `vue-query` | `axios` + manual handling | Vue Query handles caching, errors, loading, **infinite scroll** |
+| Testing | `vitest` + `cypress` | `jest`, `playwright` | Vitest = fast, Cypress = visual and reliable |
+| UI | `tailwind` + `flowbite` | `Bootstrap`, `Vuetify` | Tailwind = flexible design, Flowbite = ready-made components |
+| Accessibility | `axe-core` | `eslint-plugin-jsx-a11y` | Axe = runtime audit, more precise |
+
+---
+
+> ✨ This stack is designed to deliver optimal DX, top-tier front-end performance, and a solid foundation for testing, accessibility, and scalability.
 
 
 ## ✨ Features
