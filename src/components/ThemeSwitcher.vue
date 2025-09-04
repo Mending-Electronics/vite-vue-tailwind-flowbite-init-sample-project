@@ -34,6 +34,7 @@
     <!-- Dropdown menu -->
     <div
       v-show="isOpen"
+      id="theme-dropdown"
       class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white dark:bg-gray-800 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
       role="menu"
       aria-orientation="vertical"
@@ -55,13 +56,15 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue';
+import { ref, computed, onMounted, onUnmounted } from 'vue';
 import { useThemeStore } from '@/store/theme';
 
 const themeStore = useThemeStore();
 const isOpen = ref(false);
 
-const { currentTheme, availableThemes } = themeStore;
+// Use computed to reactively get the current theme
+const currentTheme = computed(() => themeStore.currentTheme);
+const availableThemes = computed(() => themeStore.availableThemes);
 
 const setTheme = (theme) => {
   themeStore.setTheme(theme);
@@ -73,8 +76,10 @@ const toggleDropdown = () => {
 };
 
 const handleClickOutside = (event) => {
-  const target = event.target;
-  if (!target.closest('.relative')) {
+  const dropdown = document.getElementById('theme-dropdown');
+  const button = document.getElementById('theme-toggle');
+  
+  if (dropdown && button && !dropdown.contains(event.target) && !button.contains(event.target)) {
     isOpen.value = false;
   }
 };
@@ -84,7 +89,7 @@ onMounted(() => {
   document.addEventListener('click', handleClickOutside);
 });
 
-onBeforeUnmount(() => {
+onUnmounted(() => {
   document.removeEventListener('click', handleClickOutside);
 });
 </script>

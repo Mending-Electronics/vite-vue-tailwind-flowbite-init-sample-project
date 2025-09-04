@@ -18,6 +18,7 @@ export const useThemeStore = defineStore('theme', {
       const savedTheme = localStorage.getItem('theme');
       const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
       
+      // Apply the theme immediately to prevent flash of default theme
       if (savedTheme) {
         this.setTheme(savedTheme);
       } else if (systemPrefersDark) {
@@ -25,6 +26,13 @@ export const useThemeStore = defineStore('theme', {
       } else {
         this.setTheme('light');
       }
+      
+      // Listen for system theme changes
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        if (!localStorage.getItem('theme')) { // Only auto-update if user hasn't set a preference
+          this.setTheme(e.matches ? 'dark' : 'light');
+        }
+      });
     },
 
     setTheme(themeName) {
@@ -33,19 +41,28 @@ export const useThemeStore = defineStore('theme', {
         return;
       }
 
-      // Remove all theme classes
-      document.documentElement.classList.remove(
+      const html = document.documentElement;
+      
+      // Remove all theme classes and attributes
+      html.classList.remove(
         'dark',
+        'light',
         'theme-protanopia',
         'theme-deuteranopia',
         'theme-tritanomaly'
       );
+      
+      // Remove data-mode attribute
+      html.removeAttribute('data-mode');
 
-      // Add the selected theme class
+      // Apply the selected theme
       if (themeName === 'dark') {
-        document.documentElement.classList.add('dark');
+        html.setAttribute('data-mode', 'dark');
+        html.classList.add('dark');
       } else if (themeName !== 'light') {
-        document.documentElement.classList.add(`theme-${themeName}`);
+        html.classList.add(`theme-${themeName}`);
+      } else {
+        html.setAttribute('data-mode', 'light');
       }
 
       // Update state and save to localStorage
