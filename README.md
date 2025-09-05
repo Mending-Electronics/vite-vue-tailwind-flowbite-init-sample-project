@@ -10,7 +10,7 @@ Kickstart your front-end Node-only project with this template powered by Vue 3, 
 [![Vue](https://img.shields.io/badge/vue-%233eaf7c.svg?style=for-the-badge&logo=vuedotjs&logoColor=white)](https://vuejs.org/)
 [![Vue-Router](https://img.shields.io/badge/vue%20router-%232f8b61.svg?style=for-the-badge&logo=vuedotjs&logoColor=white)](https://router.vuejs.org/)
 [![Pinia](https://img.shields.io/badge/pinia-%232f8b61.svg?style=for-the-badge&logo=vuedotjs&logoColor=white)](https://pinia.vuejs.org/)
-[![VueUse](https://img.shields.io/badge/VueUse-%233eaf7c.svg?style=for-the-badge&logo=vuedotjs&logoColor=white)](https://vueuse.org/)
+[![VueUse](https://img.shields.io/badge/VueUse-%232f8b61.svg?style=for-the-badge&logo=vuedotjs&logoColor=white)](https://vueuse.org/)
 [![vue-i18n](https://img.shields.io/badge/vue--i18n-%232f8b61.svg?style=for-the-badge&logo=vuedotjs&logoColor=white)](https://vue-i18n.intlify.dev/)
 [![vue-meta](https://img.shields.io/badge/vue--meta-%232f8b61.svg?style=for-the-badge&logo=vuedotjs&logoColor=white)](https://github.com/nuxt/vue-meta)
 [![Vue Query](https://img.shields.io/badge/vue--query-%232f8b61.svg?style=for-the-badge&logo=vuedotjs&logoColor=white)](https://tanstack.com/query/latest/docs/framework/vue/overview)
